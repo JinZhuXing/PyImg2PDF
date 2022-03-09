@@ -31,3 +31,6 @@ The **source directory** must be placed like this.
         ...
         |---80.bmp
 
+## Example Usage
+
+    python img2pdf.py --srcpath='./src' --dstpath='./dst' --imgtype='bmp'
