@@ -1,6 +1,6 @@
-# Img2PDF
+# PyImg2PDF
 
-Make pdf file from image files.
+Make pdf file from image files using python.
 
 ## Usage
 
