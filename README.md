@@ -33,4 +33,4 @@ The **source directory** must be placed like this.
 
 ## Example Usage
 
-    python img2pdf.py --srcpath='./src' --dstpath='./dst' --imgtype='bmp'
+    python img2pdf.py --srcpath='./src' --dstpath='./dst' --imgtype='bmp' --autocrop=1
