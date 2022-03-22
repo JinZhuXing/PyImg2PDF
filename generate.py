@@ -4,11 +4,12 @@ from PIL import Image
 
 
 class Img2PDFGen:
-    def __init__(self, srcpath, dstpath, bookname, imgtype):
+    def __init__(self, srcpath, dstpath, bookname, imgtype, autocrop):
         self.src_path = srcpath
         self.dst_path = dstpath
         self.bookname = bookname
         self.img_type = imgtype
+        self.autocrop = autocrop
 
     def generate(self):
         # generate output pdf path
@@ -40,7 +41,8 @@ class Img2PDFGen:
                 continue
 
         # get real page region
-        img_base = self.get_page_rgn(img_base)
+        if (self.autocrop == 1):
+            img_base = self.get_page_rgn(img_base)
 
         # process every image
         img_list = []
@@ -53,7 +55,8 @@ class Img2PDFGen:
                 img_org = Image.open(new_img_path)
 
                 # crop
-                img_org = self.get_page_rgn(img_org)
+                if (self.autocrop == 1):
+                    img_org = self.get_page_rgn(img_org)
 
                 # append image to list
                 img_list.append(img_org)

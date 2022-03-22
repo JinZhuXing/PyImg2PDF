@@ -10,9 +10,10 @@ def main(args):
     src_path = args.srcpath
     dst_path = args.dstpath
     img_type = args.imgtype
+    autocrop = args.autocrop
 
     # initialize process
-    proc = Img2PDFProc(src_path, dst_path, img_type)
+    proc = Img2PDFProc(src_path, dst_path, img_type, autocrop)
 
     # start process
     proc.process()
@@ -28,6 +29,8 @@ def parse_arguments(argv):
                         help = 'Destination directory path', default = './dst')
     parser.add_argument('--imgtype', type = str,
                         help = 'Image file type (Extension)', default = 'bmp')
+    parser.add_argument('--autocrop', type = int,
+                        help = 'Use auto crop method', default = 1)
     
     return (parser.parse_args(argv))
 

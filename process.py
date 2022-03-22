@@ -3,10 +3,11 @@ from generate import Img2PDFGen
 
 
 class Img2PDFProc:
-    def __init__(self, srcpath, dstpath, imgtype):
+    def __init__(self, srcpath, dstpath, imgtype, autocrop):
         self.src_path = srcpath
         self.dst_path = dstpath
         self.img_type = imgtype
+        self.autocrop = autocrop
     
     def process(self):
         print('Process start ************************************')
@@ -25,6 +26,6 @@ class Img2PDFProc:
 
             # processing
             print('Book Name: ', book_item)
-            gen = Img2PDFGen(new_book_path, self.dst_path, book_item, self.img_type)
+            gen = Img2PDFGen(new_book_path, self.dst_path, book_item, self.img_type, self.autocrop)
             gen.generate()
             print('')
