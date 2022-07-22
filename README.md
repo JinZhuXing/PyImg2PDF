@@ -14,7 +14,7 @@ Now, it's ready to use Img2PDF.
 
 You can simply make PDF files from image with following command.s
 
-    python img2pdf.py --srcpath=<source dir> --dstpath=<output dir> --imgtype=<image type> --autocrop=<1: use autocrop, 0: do not use>
+    python img2pdf.py --srcpath=<source dir> --dstpath=<output dir> --imgtype=<image type> --autocrop=<1: use autocrop, 0: do not use> --gensmall=<0: not generate, 1: generate>
 
 The **source directory** must be placed like this.
 
@@ -33,4 +33,4 @@ The **source directory** must be placed like this.
 
 ## Example Usage
 
-    python img2pdf.py --srcpath='./src' --dstpath='./dst' --imgtype='bmp' --autocrop=1
+    python img2pdf.py --srcpath='./src' --dstpath='./dst' --imgtype='bmp' --autocrop=1 --gensmall=0

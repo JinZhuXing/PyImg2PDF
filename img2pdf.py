@@ -11,9 +11,10 @@ def main(args):
     dst_path = args.dstpath
     img_type = args.imgtype
     autocrop = args.autocrop
+    gensmall = args.gensmall
 
     # initialize process
-    proc = Img2PDFProc(src_path, dst_path, img_type, autocrop)
+    proc = Img2PDFProc(src_path, dst_path, img_type, autocrop, gensmall)
 
     # start process
     proc.process()
@@ -31,6 +32,8 @@ def parse_arguments(argv):
                         help = 'Image file type (Extension)', default = 'bmp')
     parser.add_argument('--autocrop', type = int,
                         help = 'Use auto crop method', default = 1)
+    parser.add_argument('--gensmall', type = int,
+                        help = 'Generate quarter size image', default = 0)
     
     return (parser.parse_args(argv))
 
